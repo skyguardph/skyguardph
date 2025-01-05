@@ -1,4 +1,4 @@
-import { useLabelerAgent } from '@/shell/ConfigurationContext'
+import { useLabelerAgent } from '@components/shell/ConfigurationContext'
 import { useQuery } from '@tanstack/react-query'
 
 export const useSearchActorsTypeahead = (query: string) => {

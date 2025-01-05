@@ -1,7 +1,7 @@
-import { getDidFromHandle } from '@/lib/identity'
-import { CollectionId, getCollectionName } from '@/reports/helpers/subject'
-import { useWorkspaceAddItemsMutation } from '@/workspace/hooks'
-import { useSearchActorsTypeahead } from '@/repositories/useSearchActorsTypeahead'
+import { getDidFromHandle } from '@lib/identity'
+import { CollectionId, getCollectionName } from '@components/reports/helpers/subject'
+import { useWorkspaceAddItemsMutation } from '@components/workspace/hooks'
+import { useSearchActorsTypeahead } from '@components/repositories/useSearchActorsTypeahead'
 import { AppBskyActorDefs, AtUri } from '@atproto/api'
 import {
   ChatBubbleLeftIcon,
@@ -28,7 +28,7 @@ import {
   isValidHandle,
   parseAtUri,
   buildAtUriFromFragments,
-} from '../../../lib/util'
+} from '@lib/util'
 
 const PostIcon = ChatBubbleLeftIcon
 const RepoIcon = UserGroupIcon

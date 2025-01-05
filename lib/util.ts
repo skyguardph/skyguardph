@@ -1,4 +1,7 @@
-import { CollectionId } from '@/reports/helpers/subject'
+// Force module scope
+export {}
+
+import { CollectionId } from '@components/reports/helpers/subject'
 import { SOCIAL_APP_URL } from './constants'
 import { AtUri } from '@atproto/api'
 

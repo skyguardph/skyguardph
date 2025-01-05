@@ -1,3 +1,6 @@
+// Force module scope
+export {}
+
 'use client'
 import { useSearchParams } from 'next/navigation'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
@@ -6,11 +9,11 @@ import { MobileMenuProvider, MobileMenu, MobileMenuBtn } from './MobileMenu'
 import { ProfileMenu } from './ProfileMenu'
 
 import { useCommandPaletteAsyncSearch } from './CommandPalette/useAsyncSearch'
-import { useFluentReportSearchUpdate } from '@/reports/useFluentReportSearch'
-import { useSyncedState } from '@/lib/useSyncedState'
+import { useFluentReportSearchUpdate } from '@components/reports/useFluentReportSearch'
+import { useSyncedState } from '@lib/useSyncedState'
 import Image from 'next/image'
 import { Suspense } from 'react'
-import { useColorScheme } from '@/common/useColorScheme'
+import { useColorScheme } from '@components/common/useColorScheme'
 
 export function Shell({ children }: React.PropsWithChildren) {
   useCommandPaletteAsyncSearch()
@@ -28,7 +31,7 @@ export function Shell({ children }: React.PropsWithChildren) {
                 height={100}
                 className="h-8 w-auto"
                 src="/img/logo-white.png"
-                alt="Ozone - Bluesky Admin"
+                alt="SkyGuard PH - Bluesky Admin"
                 title="Icon from Flaticon: https://www.flaticon.com/free-icons/lifeguard-tower"
               />
             </div>

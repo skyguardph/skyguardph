@@ -1,3 +1,6 @@
+// Force module scope
+export {}
+
 'use client'
 
 import {
@@ -9,15 +12,15 @@ import { useMutation } from '@tanstack/react-query'
 import Link from 'next/link'
 import { ComponentProps, ReactElement, cloneElement, useState } from 'react'
 
-import { ErrorInfo } from '@/common/ErrorInfo'
-import { Checkbox, Input } from '@/common/forms'
-import { Loading } from '@/common/Loader'
+import { ErrorInfo } from '@components/common/ErrorInfo'
+import { Checkbox, Input } from '@components/common/forms'
+import { Loading } from '@components/common/Loader'
 import {
   OzoneConfig,
   OzoneConfigFull,
   getServiceUrlFromDoc,
   withDocAndMeta,
-} from '@/lib/client-config'
+} from '@lib/client-config'
 import { Agent } from '@atproto/api'
 import { useAuthContext, useAuthDid, useAuthIdentifier } from './AuthContext'
 import { ConfigurationState } from './ConfigurationContext'
@@ -54,8 +57,8 @@ export function ConfigurationFlow({
     return (
       <>
         <ErrorInfo type="warn" className="mt-2">
-          {`You're`} not logged-in. Please login using your Ozone service
-          account in order to configure Ozone.
+          {`You're`} not logged-in. Please login using your SkyGuard PH service
+          account in order to configure SkyGuard PH.
         </ErrorInfo>
         <Button
           className="w-full mt-2"
@@ -102,8 +105,8 @@ export function ConfigurationFlow({
         <>
           <ErrorInfo type="warn" className="mt-2">
             {`You're`} logged in as {authIdentifier}. Please login as{' '}
-            {config.handle || 'your Ozone service account'} in order to
-            configure Ozone.
+            {config.handle || 'your SkyGuard PH service account'} in order to
+            configure SkyGuard PH.
           </ErrorInfo>
           <Button
             className="w-full mt-2"
@@ -156,8 +159,8 @@ export function ConfigurationFlow({
       return (
         <>
           <ErrorInfo type="warn" className="mt-2">
-            We could not find your Ozone service configuration. Please ensure
-            {`you're`} currently on the domain where your Ozone service is
+            We could not find your SkyGuard PH service configuration. Please ensure
+            {`you're`} currently on the domain where your SkyGuard PH service is
             running.
           </ErrorInfo>
           <Button
@@ -186,12 +189,12 @@ export function ConfigurationFlow({
     return (
       <ErrorInfo type="warn" className="mt-2">
         {`There's`} a configuration issue: you will need to update your identity
-        or your Ozone service.
+        or your SkyGuard PH service.
         <br />
         <br />
         {!config.matching.service && (
           <>
-            Your Ozone service is running at <b>{config.meta.url}</b>, but your
+            Your SkyGuard PH service is running at <b>{config.meta.url}</b>, but your
             identity points to{' '}
             <b>{getServiceUrlFromDoc(config.doc, 'atproto_labeler')}</b>.
           </>
@@ -204,7 +207,7 @@ export function ConfigurationFlow({
         )}
         {!config.matching.key && (
           <>
-            Your Ozone service is configured with a different key than the key
+            Your SkyGuard PH service is configured with a different key than the key
             associated with {config.handle}.
           </>
         )}
@@ -370,7 +373,7 @@ function RecordConfigurationFlow({
   return (
     <div className="text-gray-600 dark:text-gray-100 mt-4">
       <p className="mt-4">
-        Your Ozone service configuration and your identity are in sync.
+        Your SkyGuard PH service configuration and your identity are in sync.
       </p>
       <p className="mt-4">
         The final step is to publish a record that will allow your account
@@ -389,8 +392,8 @@ function RecordConfigurationFlow({
       {authDid !== config.did && (
         <ErrorInfo type="warn" className="mt-4">
           {`You're`} logged in as {identifier}. Please login as{' '}
-          {config.handle || 'your Ozone service account'} in order to configure
-          Ozone.
+          {config.handle || 'your SkyGuard PH service account'} in order to configure
+          SkyGuard PH.
           <br />
           <br />
           You may skip this step and come back to it next time you login.

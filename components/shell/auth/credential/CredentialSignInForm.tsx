@@ -1,9 +1,12 @@
+// Force module scope
+export {}
+
 import { ComAtprotoServerCreateSession } from '@atproto/api'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import { createRef, FormEvent, useCallback, useState } from 'react'
 
-import { Alert } from '@/common/Alert'
-import { ErrorInfo } from '@/common/ErrorInfo'
+import { Alert } from '@components/common/Alert'
+import { ErrorInfo } from '@components/common/ErrorInfo'
 
 export type CredentialSignIn = (input: {
   identifier: string

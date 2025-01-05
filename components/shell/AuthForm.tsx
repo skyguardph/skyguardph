@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-import { TabsPanel } from '@/common/Tabs'
+import { TabsPanel } from '@components/common/Tabs'
 import {
   CredentialSignIn,
   CredentialSignInForm,

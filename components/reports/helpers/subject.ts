@@ -1,4 +1,4 @@
-import { useLabelerAgent } from '@/shell/ConfigurationContext'
+import { useLabelerAgent } from '@components/shell/ConfigurationContext'
 import { ToolsOzoneModerationDefs } from '@atproto/api'
 import { useCallback } from 'react'
 

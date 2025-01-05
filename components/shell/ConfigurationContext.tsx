@@ -1,3 +1,6 @@
+// Force module scope
+export {}
+
 'use client'
 
 import { Agent, CredentialSession } from '@atproto/api'
@@ -11,9 +14,9 @@ import {
   useState,
 } from 'react'
 
-import { SetupModal } from '@/common/SetupModal'
-import { OzoneConfig } from '@/lib/client-config'
-import { PermissionName, ServerConfig } from '@/lib/server-config'
+import { SetupModal } from '@components/common/SetupModal'
+import { OzoneConfig } from '@lib/client-config'
+import { PermissionName, ServerConfig } from '@lib/server-config'
 import { useAuthContext } from './AuthContext'
 import { useConfigContext } from './ConfigContext'
 import { useServerConfigQuery } from './ConfigurationContext/useServerConfigQuery'

@@ -30,10 +30,10 @@ export async function getConfig(): Promise<OzoneConfig> {
   const did = meta?.did ?? labelerDid
 
   if (!did) {
-    throw new Error('Could not determine an Ozone service DID')
+    throw new Error('Could not determine a SkyGuard PH service DID')
   } else if (labelerDid && did !== labelerDid) {
     throw new Error(
-      'Mismatch between Ozone service DID and Ozone service metadata',
+      'Mismatch between SkyGuard PH service DID and SkyGuard PH service metadata',
     )
   }
 

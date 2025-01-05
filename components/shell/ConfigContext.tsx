@@ -1,11 +1,14 @@
+// Force module scope
+export {}
+
 'use client'
 
 import { createContext, ReactNode, useContext, useMemo } from 'react'
 
-import { Loading } from '@/common/Loader'
-import { SetupModal } from '@/common/SetupModal'
-import { getConfig, OzoneConfig } from '@/lib/client-config'
-import { useStoredQuery } from '@/lib/useStoredQuery'
+import { Loading } from '@components/common/Loader'
+import { SetupModal } from '@components/common/SetupModal'
+import { getConfig, OzoneConfig } from '@lib/client-config'
+import { useStoredQuery } from '@lib/useStoredQuery'
 import { GLOBAL_QUERY_CONTEXT } from './QueryClient'
 
 export type ConfigContextData = {

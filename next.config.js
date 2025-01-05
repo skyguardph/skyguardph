@@ -4,6 +4,15 @@ const nextConfig = {
   experimental: {
     missingSuspenseWithCSRBailout: false,
   },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@components': './components',
+      '@lib': './lib',
+      '@styles': './styles'
+    }
+    return config
+  }
 }
 
 module.exports = nextConfig

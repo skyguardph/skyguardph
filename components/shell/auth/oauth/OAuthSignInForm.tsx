@@ -1,8 +1,11 @@
+// Force module scope
+export {}
+
 import type { AuthorizeOptions } from '@atproto/oauth-client-browser'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import { FormEvent, useCallback, useState } from 'react'
 
-import { ErrorInfo } from '@/common/ErrorInfo'
+import { ErrorInfo } from '@components/common/ErrorInfo'
 import { OAuthSignIn } from './useOAuth'
 
 export type { OAuthSignIn }
